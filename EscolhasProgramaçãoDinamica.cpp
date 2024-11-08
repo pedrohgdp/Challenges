@@ -41,7 +41,6 @@ int main(){
     //Imprime o ultimo elemento do array
     cout << custosTrocas[quantTernos - 1] << endl;
 
-    //teste mudança 1
     
     return 0;
 }
