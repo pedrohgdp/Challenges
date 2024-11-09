@@ -32,7 +32,7 @@ int main(){
         //While para calcula o resultado
         //While roda enquanto o c for > 0;
         while(numeros[i].c > 0){
-            //Se o numero for impar eu pego o valor em resultado[i] * b e pego o modulo.
+            //Se o numero for impar eu pego o valor em resultado[i] * base e pego o modulo.
             if(numeros[i].c % 2 == 1){
                 resultados[i] = (numeros[i].b * resultados[i]) % (mod - 1);
             }
@@ -41,7 +41,8 @@ int main(){
             //O Valor no expoente b recebe ele * ele mesmo e o modulo.
             numeros[i].b = (numeros[i].b * numeros[i].b) % (mod - 1);
 
-            /*Resumindo 2 ^ 3
+            /*
+            Resumindo 2 ^ 3
             3 é impar então resultado na casa 0 recebe 2 * 1 == 2
             depois divide 3 / 2 dando 1
             a base 2 recebe 2 * 2 == 4
@@ -49,8 +50,12 @@ int main(){
             resultado recebe 4 * 2 == 8
             divide por 2 dando 0
             base recebe 4 * 4 = 8 
-            mas o while ja sai com resultado no i com 8*/
-        }
+            mas o while ja sai com resultado no i com 8*
+            no caso no final sempre vai ser impar então atualizando a base quando par e atualizando o 
+            valor na casa do resultados quando é impar no final vamos ter o valor certo*
+            */
+
+       }
     }
 
 
