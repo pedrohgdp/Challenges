@@ -7,6 +7,18 @@ struct expoentes{
     long long c;
 };
 
+int calculo(int mod, long long resultados, vector<expoentes> &numeros){
+
+
+
+
+
+    return resultados;
+}
+
+
+
+
 
 int main(){
 
