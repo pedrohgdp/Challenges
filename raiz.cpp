@@ -5,7 +5,7 @@ using namespace std;
 int main(){
 
     //s×s≡x (mod p)
-
+    
     //Variavel do numero 
     long long p;
     cin >> p;
@@ -23,7 +23,6 @@ int main(){
             }
         }
     }
-
 
     for(int i = 0; i < p; i++){
         cout << raizes[i] << " ";
