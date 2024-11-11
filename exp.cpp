@@ -7,40 +7,16 @@ struct expoentes{
     long long c;
 };
 
-int calculo(int mod, long long resultados, vector<expoentes> &numeros){
+void calculo(int mod, vector<long long> &resultados, vector<expoentes> &numeros, int quantTeste){
 
-
-
-
-
-    return resultados;
-}
-
-
-
-
-
-int main(){
-
-    //Modulo 
-    const int mod = 1000000000 + 7;
-
-    int quantTeste = 0;
-    cin >> quantTeste;
-
-    vector<expoentes> numeros(quantTeste);
-    //Vetor para guardar os resultados de b**c
-    vector<long long> resultados(quantTeste);
-
-
-    //For que vou ler e ja vou calcular b**c
     for(int i = 0; i < quantTeste; i++){
-        //Vou ler os valores a b e c.
-        cin >> numeros[i].a >> numeros[i].b >> numeros[i].c;
         //Resultado recebe 1 por que o primeiro caso é b * b
         resultados[i] = 1;
-        //Pegamos o modulo de b para ja deixar o valor pequeno
+        //Pegamos o modulo de b e a para ja deixar o valor pequeno
         numeros[i].b %= (mod - 1);
+        numeros[i].a %= (mod);
+        //Resultado final com mesmo esquema de resultado na casa i
+        long long resultadoFinal = 1;
         //While para calcula o resultado
         //While roda enquanto o c for > 0;
         while(numeros[i].c > 0){
@@ -66,24 +42,50 @@ int main(){
             no caso no final sempre vai ser impar então atualizando a base quando par e atualizando o 
             valor na casa do resultados quando é impar no final vamos ter o valor certo*
             */
-
        }
-    }
 
-
-    //Mesma coisa só que com a
-    for(int i = 0; i < quantTeste; i++){
-        long long resultadoFinal = 1;
-        numeros[i].a %= mod;
-        while(resultados[i] > 0){
+       while(resultados[i] > 0){
+            //Calculo o a^x de uma vez
             if(resultados[i] % 2 == 1){
                 resultadoFinal = (numeros[i].a * resultadoFinal) % (mod);
             }
             resultados[i] /= 2;
             numeros[i].a = (numeros[i].a * numeros[i].a) % (mod);
-        }
-        cout << resultadoFinal << endl;
+       }
+        resultados[i] = resultadoFinal;
+    }
+}
+
+
+
+
+
+int main(){
+
+    //Modulo 
+    const int mod = 1000000000 + 7;
+
+    int quantTeste = 0;
+    cin >> quantTeste;
+
+    vector<expoentes> numeros(quantTeste);
+    //Vetor para guardar os resultados de b**c
+    vector<long long> resultados(quantTeste);
+
+
+    for(int i = 0; i < quantTeste; i++){
+        //Vou ler os valores a b e c.
+        cin >> numeros[i].a >> numeros[i].b >> numeros[i].c;
     }
 
+    calculo(mod, resultados, numeros, quantTeste);
+
+
+    for(int i = 0; i < quantTeste; i++){
+        cout << resultados[i] << " ";
+    }
+
+    cout << endl;
+        
     return 0;
 }
