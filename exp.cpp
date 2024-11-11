@@ -57,9 +57,6 @@ void calculo(int mod, vector<long long> &resultados, vector<expoentes> &numeros,
 }
 
 
-
-
-
 int main(){
 
     //Modulo 
