@@ -1,4 +1,6 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
+#include <vector>       
+#include <algorithm>
 using namespace std;
     
 void principal(int m, int n, int x, int y,vector<vector<int>> &lab, vector<int> &caminhos, vector<vector<int>> &visitados, int passos){
