@@ -1,3 +1,8 @@
+//Jucelino barbacena agora nao pode pescar porque a chuva inundou a sua casa e estragou a sua tralha
+//de pescaria. Ele, muito fã de teoria dos números, iventou um novo jogo.
+//Saodados tres inteiros a,b,c sendo (a <= a,b,c, <=10^9) e ele quer calcular o valor de a^(b^c) mmodulo p
+//tal que p = 10^9 + 7, portanto, primo. Note que pelos valores possiveis de a, nenhum a é divisivel por p
+
 #include <bits/stdc++.h>
 using namespace std;
 
